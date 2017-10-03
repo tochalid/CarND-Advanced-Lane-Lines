@@ -134,7 +134,7 @@ I implemented this step in lines #418 through #438 in my code in `AdvanceLaneLin
 ### Pipeline (video)
 
 Here's a link to my video result
-[project_video_detected.mp4](./project_video_detected.mp4)
+[project_video_detected.mp4](./examples/project_video_detected.mp4)
 
 Here are some output samples
 [output_samples.zip](./output_images/run7.zip)
