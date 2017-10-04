@@ -7,10 +7,11 @@ from collections import deque
 
 class LaneLine():
     # Define conversions in x and y from pixels space to meters
-    ym_per_pix = 30 / (720)  # meters per pixel in y dimension
-    xm_per_pix = 3.7 / 700  # meters per pixel in x dimension
+    ym_per_pix = 30 / 720  # meters per pixel in y dimension
+    xm_per_pix = (3.7 / 640)  # meters per pixel in x dimension
 
     Q_MAX_LEN_CURVE = 25 # controls the number of values averaged #25..50 #smaler less latency, higher stabilizes line better
+    Q_MAX_LEN_BASE = 5 # controls the number of values averaged #25..50 #smaler less latency, higher stabilizes line better
     Q_MAX_LEN_BFIT = 5 # controls number of values averaged for best fit #5
     Q_MAX_LEN_DETC = 1 # controls number of remembered detected flags
 
@@ -34,6 +35,8 @@ class LaneLine():
 
         #radius of curvature of the line in some units
         self.radius_of_curvature = deque(np.array([0.0], dtype='float'), maxlen=LaneLine.Q_MAX_LEN_CURVE) # set
+        #distance in meters of vehicle center from the line
+        self.line_bases = deque(np.array([0.0], dtype='float'), maxlen=LaneLine.Q_MAX_LEN_BASE) # set
         #distance in meters of vehicle center from the line
         self.line_base_pos = None # set
 
