@@ -11,7 +11,7 @@ class LaneLine():
     xm_per_pix = (3.7 / 640)  # meters per pixel in x dimension
 
     Q_MAX_LEN_CURVE = 25 # controls the number of values averaged #25..50 #smaler less latency, higher stabilizes line better
-    Q_MAX_LEN_BASE = 5 # controls the number of values averaged #25..50 #smaler less latency, higher stabilizes line better
+    Q_MAX_LEN_BASE = 15 # controls the number of values averaged #25..50 #smaler less latency, higher stabilizes line better
     Q_MAX_LEN_BFIT = 5 # controls number of values averaged for best fit #5
     Q_MAX_LEN_DETC = 1 # controls number of remembered detected flags
 
