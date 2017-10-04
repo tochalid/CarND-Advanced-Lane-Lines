@@ -19,11 +19,6 @@ class LaneLine():
         #was the line detected in the last iteration?
         self.detected = deque(['False'] * LaneLine.Q_MAX_LEN_DETC, maxlen=LaneLine.Q_MAX_LEN_DETC) #set
 
-        # x values of the last n fits of the line
-        self.recent_xfitted = []
-        #average x values of the fitted line over the last n iterations
-        self.bestx = None
-
         # x values for polynom plotting
         self.best_fitx = None #set
         # polynomial coefficients for the most recent fit
@@ -54,23 +49,24 @@ class LaneLine():
         self.Minv = None #set
 
     def print_line_status(self, name='line instance'):
-        # print('ym_per_pix: ', self.ym_per_pix)
-        # print('xm_per_pix: ', self.xm_per_pix)
-        # print('Q_MAX_LEN_CURVE: ', self.Q_MAX_LEN_CURVE)
-        # print('Q_MAX_LEN_FITX: ', self.Q_MAX_LEN_FITX)
+        print('ym_per_pix: ', self.ym_per_pix)
+        print('xm_per_pix: ', self.xm_per_pix)
+        print('Q_MAX_LEN_CURVE: ', self.Q_MAX_LEN_CURVE)
+        print('Q_MAX_LEN_BASE: ', self.Q_MAX_LEN_BASE)
+        print('Q_MAX_LEN_BFIT: ', self.Q_MAX_LEN_BFIT)
+        print('Q_MAX_LEN_DETC: ', self.Q_MAX_LEN_DETC)
         print('\n\n------ ', name, ' ------')
         print('detected: ', self.detected)
-        print('recent_xfitted: ', self.recent_xfitted)
-        print('bestx: ', self.bestx)
-        # print('Fitx: ', self.fitx)
+        print('best_fitx: ', self.best_fitx)
         print('current_fit: ', self.current_fit, '- shape', self.current_fit.shape)
         print('avg best_fit: ', self.best_fit_avg)
         print('best_fits: ', self.best_fits)
         print('radius_of_curvature: ', self.radius_of_curvature)
         print('line_base_pos: ', self.line_base_pos)
+        print('line_bases: ', self.line_bases)
         print('diffs: ', self.diffs, '- shape', self.diffs.shape)
         print('allx: ', self.allx, '- shape', self.allx.shape)
         print('ally: ', self.ally, '- shape', self.ally.shape)
-        # print('ploty: ', self.ploty, '- shape', self.ploty.shape)  # array with numbers 0..719
-        # print('Minv: ', self.Minv, '- shape', self.Minv.shape)
+        print('ploty: ', self.ploty, '- shape', self.ploty.shape)  # array with numbers 0..719
+        print('Minv: ', self.Minv, '- shape', self.Minv.shape)
         return

@@ -14,7 +14,7 @@ from collections import deque
 LOG_LEVEL = False
 GLOBAL_SHOW = False
 GLOBAL_SAVE = False # just a switch to save images to disk
-GLOBAL_PREDEL = True    # just a switch to delete files
+GLOBAL_PREDEL = False    # just a switch to delete files
 print('PREDEL=',GLOBAL_PREDEL,' SAVE=',GLOBAL_SAVE,' LOG=', LOG_LEVEL)
 OUT_PATH = '../output_images'
 DIR_RUN = '/run8'
