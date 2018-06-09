@@ -34,9 +34,6 @@ The goals / steps of this project are the following:
 
 ### Writeup
 
-#### 1. My README.md
-... you're actually reading it!
-
 Udacity [README](https://github.com/tochalid/CarND-Advanced-Lane-Lines/tree/master/writeup_template.md)
 
 ### Camera Calibration
